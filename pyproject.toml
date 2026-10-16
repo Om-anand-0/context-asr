@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "context-asr"
+version = "0.1.0"
+description = "Speech-to-text that notices what you're talking about and biases Whisper toward the right names."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+  "faster-whisper",
+  "av<16",  # faster-whisper 1.2 passes metadata_errors=, which PyAV 16+ removed
+  "requests",
+  "jellyfish",
+  "jiwer",
+  "numpy",
+]
+
+[project.optional-dependencies]
+spacy = ["spacy"]
+dev = ["pytest"]
+
+[project.scripts]
+context-asr = "context_asr.cli:main"
+
+[tool.setuptools]
+packages = ["context_asr"]

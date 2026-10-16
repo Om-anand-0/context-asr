@@ -1,0 +1,16 @@
+{
+  "Game of Thrones": [
+    "Westeros", "Essos", "King's Landing", "Winterfell", "Daenerys Targaryen", "Tyrion Lannister",
+    "Cersei Lannister", "Jaime Lannister", "Jon Snow", "Arya Stark", "Sansa Stark", "Bran Stark",
+    "Khaleesi", "Drogon", "Petyr Baelish", "Varys", "Brienne of Tarth", "Sandor Clegane", "Dothraki"
+  ],
+  "Formula 1": [
+    "Max Verstappen", "Lewis Hamilton", "Charles Leclerc", "Lando Norris", "Oscar Piastri",
+    "Carlos Sainz", "George Russell", "Fernando Alonso", "Red Bull Racing", "Ferrari", "McLaren",
+    "Mercedes", "DRS", "Monza", "Silverstone", "Spa-Francorchamps", "FIA", "pit wall"
+  ],
+  "Kubernetes": [
+    "kubectl", "kubelet", "etcd", "Helm", "Istio", "pod", "DaemonSet", "StatefulSet", "Ingress",
+    "ConfigMap", "kube-proxy", "CoreDNS", "Kustomize", "Argo CD", "containerd", "CNI"
+  ]
+}
