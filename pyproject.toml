@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,8 +7,15 @@ name = "context-asr"
 version = "0.1.0"
 description = "Speech-to-text that notices what you're talking about and biases Whisper toward the right names."
 readme = "README.md"
-license = { text = "MIT" }
+license = "MIT"
+authors = [{ name = "Om Anand" }]
 requires-python = ">=3.10"
+keywords = ["speech-recognition", "asr", "whisper", "faster-whisper", "contextual-biasing", "named-entities"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Sound/Audio :: Speech",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 dependencies = [
   "faster-whisper",
   "av<16",  # faster-whisper 1.2 passes metadata_errors=, which PyAV 16+ removed
@@ -17,6 +24,10 @@ dependencies = [
   "jiwer",
   "numpy",
 ]
+
+[project.urls]
+Repository = "https://github.com/Om-anand-0/context-asr"
+Issues = "https://github.com/Om-anand-0/context-asr/issues"
 
 [project.optional-dependencies]
 spacy = ["spacy"]

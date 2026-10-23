@@ -1,0 +1,21 @@
+name: release
+
+# Push a tag like v0.1.0 to publish to PyPI. Uses trusted publishing, so no API
+# token is stored anywhere: PyPI trusts this workflow in this repo.
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  pypi:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install build && python -m build
+      - uses: pypa/gh-action-pypi-publish@release/v1
