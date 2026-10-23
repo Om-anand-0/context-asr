@@ -58,7 +58,7 @@ output is rewritten to the glossary spelling.
 ## Install
 
 ```bash
-pip install -e .              # or: pip install -e ".[spacy,dev]"
+pip install context-asr            # or: pip install "context-asr[spacy]"
 ```
 
 Requires Python 3.10+. The first run downloads the Whisper model from Hugging Face.
@@ -83,6 +83,7 @@ context-asr lookup "Game of Thrones"
 ```
 
 Other flags: `--device cpu|cuda|auto`, `--language en`, `--spacy`, `--no-correct`.
+`--spacy` also needs `python -m spacy download en_core_web_sm`.
 If you see `cublas64_12.dll is not found`, pass `--device cpu` or install the CUDA 12 libraries.
 
 From Python:
@@ -105,7 +106,7 @@ for chunk in result.chunks:
 
 ## Results: Earnings-21
 
-_Run in progress._ `benchmarks/earnings21.py` compares baseline, contextual and oracle prompting on the 11-call eval10 subset, scoring the dataset's own entity annotations.
+Results are being finalized; the latest table is in the [GitHub README](https://github.com/Om-anand-0/context-asr#results-earnings-21). `benchmarks/earnings21.py` compares baseline, contextual and oracle prompting on the 11-call eval10 subset, scoring the dataset's own entity annotations.
 
 ## Benchmark with your own clip
 
@@ -149,6 +150,7 @@ name is noise.
 ## Development
 
 ```bash
+git clone https://github.com/Om-anand-0/context-asr && cd context-asr
 pip install -e ".[dev]"
 pytest
 ```
